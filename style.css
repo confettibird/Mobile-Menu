@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.menu {
+  position: static;
+  display: flex;
+}
+
+.menu a {
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #555;
+  color: white;
+}
+
+#toggleMenu {
+  display: none;
+  /* Initially hide the toggle menu button */
+}
+
+/* Show the toggle menu button on screens smaller than 750px */
+@media (max-width: 750px) {
+  .menu {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    right: -250px;
+    /* Start off-screen to the right */
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: white;
+    transition: right 0.5s ease;
+    padding-top: 60px;
+  }
+
+  .menu a {
+    padding: 10px 15px;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    background-color: #555;
+  }
+
+  /* Menu visible state */
+  .menu.visible {
+    right: 0; /* Slide in */
+  }
+
+  #toggleMenu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+}
