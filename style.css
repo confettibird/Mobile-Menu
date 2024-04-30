@@ -2,6 +2,13 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+.content {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
 
 .menu {
   position: static;
